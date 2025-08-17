@@ -2,8 +2,6 @@ name: Запуск бота
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */5 * * *'  # каждые 5 часов
 
 jobs:
   run-bot:
@@ -35,6 +33,10 @@ jobs:
 
       - name: Сделать движок исполняемым
         run: chmod +x ./engines/stockfish
+
+      - name: Запустить бота
+        run: python user_interface.py
+
 
       - name: Запустить бота
         run: python user_interface.py
